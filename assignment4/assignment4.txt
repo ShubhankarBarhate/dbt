@@ -1,0 +1,165 @@
+Microsoft Windows [Version 10.0.26100.3476]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\shubh>mysql -u W2_89800_Shubhankar -p
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.4.4 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+W2_89800_Shubhankar>SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| classwork          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>use classwork;
+Database changed
+W2_89800_Shubhankar>SHOW TABLES;
++---------------------+
+| Tables_in_classwork |
++---------------------+
+| bonus               |
+| books               |
+| customers           |
+| dept                |
+| dummy               |
+| emp                 |
+| orders              |
+| salespeople         |
+| salgrade            |
++---------------------+
+9 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>select Onum,Amt,Odate from orders;
++------+---------+-------------+
+| Onum | Amt     | Odate       |
++------+---------+-------------+
+| 3001 |   18.69 | 03-OCT-1990 |
+| 3003 |  767.19 | 03-OCT-1990 |
+| 3002 | 1900.10 | 03-OCT-1990 |
+| 3005 | 5160.45 | 03-OCT-1990 |
+| 3006 | 1098.16 | 03-OCT-1990 |
+| 3006 | 1713.23 | 04-OCT-1990 |
+| 3007 |   75.75 | 04-OCT-1990 |
+| 3008 | 4723.00 | 05-OCT-1990 |
+| 3010 | 1309.95 | 06-OCT-1990 |
+| 3011 | 9891.88 | 06-OCT-1990 |
++------+---------+-------------+
+10 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>SELECT * FROM Salespeople WHERE Snum = 1001;
++------+-------+--------+------+
+| Snum | Sname | City   | Comm |
++------+-------+--------+------+
+| 1001 | Peel  | London | 0.12 |
++------+-------+--------+------+
+1 row in set (0.04 sec)
+
+W2_89800_Shubhankar>^C
+W2_89800_Shubhankar>SELECT City,Sname,Snum,Comm from Salespeople;
++-----------+---------+------+------+
+| City      | Sname   | Snum | Comm |
++-----------+---------+------+------+
+| London    | Peel    | 1001 | 0.12 |
+| San Jose  | Serres  | 1002 | 0.13 |
+| London    | Motika  | 1004 | 0.11 |
+| Barcelona | Rifikin | 1007 | 0.15 |
+| New York  | Axelrod | 1003 | 0.10 |
++-----------+---------+------+------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>Select*from salespeople;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifikin | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>Select*from customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | london   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>select rating,Cnum from customer where city='san jose';
+ERROR 1146 (42S02): Table 'classwork.customer' doesn't exist
+W2_89800_Shubhankar>select rating,Cnum from customers where city='san jose';
++--------+------+
+| rating | Cnum |
++--------+------+
+|    200 | 2003 |
+|    300 | 2008 |
++--------+------+
+2 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>^C
+W2_89800_Shubhankar>^C
+W2_89800_Shubhankar>Select*from salespeople;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifikin | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>Select snum from salespeople order by salespeople;
+ERROR 1054 (42S22): Unknown column 'salespeople' in 'order clause'
+W2_89800_Shubhankar>Select snum from salespeople order snum;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'snum' at line 1
+W2_89800_Shubhankar>Select Snum from salespeople order by snum;
++------+
+| Snum |
++------+
+| 1001 |
+| 1002 |
+| 1003 |
+| 1004 |
+| 1007 |
++------+
+5 rows in set (0.07 sec)
+
+W2_89800_Shubhankar>Select Snum distinct snum from orders;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'distinct snum from orders' at line 1
+W2_89800_Shubhankar>SELECT DISTINCT Snum FROM ORDERS;
++------+
+| Snum |
++------+
+| 1007 |
+| 1001 |
+| 1004 |
+| 1002 |
+| 1003 |
++------+
+5 rows in set (0.00 sec)
