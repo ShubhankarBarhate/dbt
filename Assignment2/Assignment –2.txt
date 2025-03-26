@@ -1,0 +1,16 @@
+Assignment –2
+
+1) Which field of the Customers table is the primary key? 
+=> Cnum
+2) What is the 4th column of the Customers table? 
+=>Rating
+3) What is another word for row?  For column? 
+=> For row: Entity, Tuple, Opportunity
+For column: Attribute, key
+4) Why isn’t it possible to see the first five rows of a table?
+=>Table is not a file internally every row is a file. Rows inside a table
+are not stored sequentially (they are not stored in any specific
+order).Rows inside a table are scattered all over the DB server HD.
+When you select from a table the retrieval will always be sequential.
+When you select from a table the order of rows in the output depends
+on the row address it will always be in ascending order of row address
