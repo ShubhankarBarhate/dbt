@@ -1,0 +1,348 @@
+Microsoft Windows [Version 10.0.26100.3476]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\shubh>-u W2_89800_Shubhankar -r
+'-u' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\shubh>-u W2_89800_Shubhankar -p
+'-u' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\shubh> -u W2_89800_Shubhankar -p
+'-u' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\shubh>mysql --version
+mysql  Ver 8.4.4 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\shubh>mysql -u W2_89800_Shubhankar -r
+ERROR 1045 (28000): Access denied for user 'W2_89800_Shubhankar'@'localhost' (using password: NO)
+
+C:\Users\shubh>mysql -u W2_89800_Shubhankar -p
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.4.4 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+W2_89800_Shubhankar>show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+W2_89800_Shubhankar>SHOW DATABASE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATABASE' at line 1
+W2_89800_Shubhankar>SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| classwork          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>show databases;
++--------------------+
+| Database           |
++--------------------+
+| classwork          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>use classwork;
+Database changed
+W2_89800_Shubhankar>show classwork;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'classwork' at line 1
+W2_89800_Shubhankar>SHOW TABELS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TABELS' at line 1
+W2_89800_Shubhankar>use classwork;
+Database changed
+W2_89800_Shubhankar>SHOW TABELS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TABELS' at line 1
+W2_89800_Shubhankar>SHOW TABLES;
++---------------------+
+| Tables_in_classwork |
++---------------------+
+| bonus               |
+| books               |
+| dept                |
+| dummy               |
+| emp                 |
+| salespeople         |
+| salgrade            |
++---------------------+
+7 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>insert into salespeople(SNUM,SNAME,CITY,COMM) VALUES(1001,'Peel','London',.12);
+Query OK, 1 row affected (0.01 sec)
+
+W2_89800_Shubhankar>Show tables;
++---------------------+
+| Tables_in_classwork |
++---------------------+
+| bonus               |
+| books               |
+| dept                |
+| dummy               |
+| emp                 |
+| salespeople         |
+| salgrade            |
++---------------------+
+7 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>show salespeople;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'salespeople' at line 1
+W2_89800_Shubhankar>SELECT * FROM SALESPEOPLE;
++------+-------+--------+------+
+| Snum | Sname | City   | Comm |
++------+-------+--------+------+
+| 1001 | Peel  | London | 0.12 |
++------+-------+--------+------+
+1 row in set (0.00 sec)
+
+W2_89800_Shubhankar>insert into salespeople(SNUM,SNAME,CITY,COMM) VALUES(1002^CPeel','London',.12),
+W2_89800_Shubhankar>^C
+W2_89800_Shubhankar>SHOW TABLES;
++---------------------+
+| Tables_in_classwork |
++---------------------+
+| bonus               |
+| books               |
+| dept                |
+| dummy               |
+| emp                 |
+| salespeople         |
+| salgrade            |
++---------------------+
+7 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>SELECT * FROM SALESPEOPLE;
++------+-------+--------+------+
+| Snum | Sname | City   | Comm |
++------+-------+--------+------+
+| 1001 | Peel  | London | 0.12 |
++------+-------+--------+------+
+1 row in set (0.00 sec)
+
+W2_89800_Shubhankar>insert into salespeople(SNUM,SNAME,CITY,COMM) VALUES(1002,'Serres','San Jose',.13),(1004,'Motika','London',.11),(1007,'Rifikin','Barcelona',.15),(1003,'Axelrod','New York',.10);
+Query OK, 4 rows affected (0.08 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+W2_89800_Shubhankar>SELECT * FROM SALESPEOPLE;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifikin | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>CREATE table customers(Cnum int(4),Cname varchar(10),City varchar(10),Rating int(4),Snum int(4));
+Query OK, 0 rows affected, 3 warnings (0.10 sec)
+
+W2_89800_Shubhankar>insert into customers(Snum,Cname,City,Rating,Snum) VALUES(2001,'Hoffman','L
+ondon',100,1001),(2002,'Giovanni','Rome',200,1003),(2003,'Liu','San jose',200,1002),(2004,'Gras
+s','Berlin',300,1002),(2006,'Clemens','london',100,1001),(2008,'Cisneros','San Jose',300,1007),
+(2007,'Pereira','Rome',100,1004);
+ERROR 1110 (42000): Column 'Snum' specified twice
+W2_89800_Shubhankar>insert into customers(Cnum,Cname,City,Rating,Snum) VALUES(2001,'Hoffman','London',100,1001),(2002,'Giovanni','Rome',200,1003),(2003,'Liu','San jose',200,1002),(2004,'Grass','Berlin',300,1002),(2006,'Clemens','london',100,1001),(2008,'Cisneros','San Jose',300,1007),(2007,'Pereira','Rome',100,1004);
+Query OK, 7 rows affected (0.08 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+W2_89800_Shubhankar>SELECT * FROM customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | london   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>CREATE table orders(0num int(4),Amt float(7,2),Odate data,Cnum int(4),Snum
+int(4));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'data,Cnum int(4),Snum int(4))' at line 1
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate data,Cnum int(4),Snum
+int(4));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'data,Cnum int(4),Snum int(4))' at line 1
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate data,Cnum int(4),Snum
+int(4));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'data,Cnum int(4),Snum int(4))' at line 1
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate date,Cnum int(4),Snum
+int(4));
+Query OK, 0 rows affected, 4 warnings (0.10 sec)
+
+W2_89800_Shubhankar>drop tabel orders;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabel orders' at line 1
+W2_89800_Shubhankar>DROP TABLE orders;
+Query OK, 0 rows affected (0.10 sec)
+
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate date,Cnum int(4),Snum
+int(4));
+Query OK, 0 rows affected, 4 warnings (0.03 sec)
+
+W2_89800_Shubhankar>insert into order(Onum,Amt,Odate,Cnum,Snum) values(3001,18.69,03-OCT-1990,2008,1007),
+    -> (3003,767.19,03-OCT-1990,2001,1001),
+    -> (3002,1900.10,03-OCT-);
+ERROR 2013 (HY000): Lost connection to MySQL server during query
+No connection. Trying to reconnect...
+Connection id:    22
+Current database: classwork
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(Onum,Amt,Odate,Cnum,Snum) values(3001,18.69,03-OCT-1990,2008,1007),
+(3003,' at line 1
+W2_89800_Shubhankar>SELECT * FROM orders;
+Empty set (0.00 sec)
+W2_89800_Shubhankar>DROP TABLE orders;
+Query OK, 0 rows affected (0.10 sec)
+
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate varchar,Cnum int(4),Sn
+um int(4));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',Cnum int(4),Snum int(4))' at line 1
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate varchar(12),Cnum int(4
+),Snum int(4));
+Query OK, 0 rows affected, 4 warnings (0.10 sec)
+
+W2_89800_Shubhankar>insert into order(Onum,Amt,Odate,Cnum,Snum) values(3001,18.69,03-OCT-1990,2
+0^X^C,1007),
+W2_89800_Shubhankar>^C
+W2_89800_Shubhankar>
+W2_89800_Shubhankar>;
+ERROR:
+No query specified
+
+W2_89800_Shubhankar>insert into order(Onum,Amt,Odate,Cnum,Snum)
+    -> values(3001,18.69,03-OCT-1990,2008,1007),
+    -> (3003,767.19,03-OCT-1990,2001,1001),
+    -> (3002,1900.10,03-OCT-1990,2007,1004),
+    -> (3005,5160.45,03-OCT-1990,2003,1002),
+    -> (3006,1098.16,03-OCT-1990,2008,1007),
+    -> (3006,1713.23,04-OCT-1990,2002,1003),
+    -> (3007,75.75,04-OCT-1990,2004,1002),
+    -> (3008,4723.00,05-OCT-1990,2006,1001),
+    -> (3010,1309.95,06-OCT-1990,2004,1002),
+    -> (3011,9891.88,06-OCT-1990,2006,1001);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(Onum,Amt,Odate,Cnum,Snum)
+values(3001,18.69,03-OCT-1990,2008,1007),
+(3003,' at line 1
+W2_89800_Shubhankar>insert into order(Onum,Amt,Odate,Cnum,Snum)
+    -> values(3001,18.69,03-OCT-1990,2008,1007),
+    -> (3003,767.19,03-OCT-1990,2001,1001),
+    -> (3002,1900.10,03-OCT-1990,2007,1004),
+    -> (3005,5160.45,03-OCT-1990,2003,1002),
+    -> (3006,1098.16,03-OCT-1990,2008,1007),
+    -> (3006,1713.23,04-OCT-1990,2002,1003),
+    -> (3007,75.75,04-OCT-1990,2004,1002),
+    -> (3008,4723.00,05-OCT-1990,2006,1001),
+    -> (3010,1309.95,06-OCT-1990,2004,1002),
+    ->
+    -> :
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(Onum,Amt,Odate,Cnum,Snum)
+values(3001,18.69,03-OCT-1990,2008,1007),
+(3003,' at line 1
+W2_89800_Shubhankar>insert into order(Onum,Amt,Odate,Cnum,Snum)values(3001,18.69,03-OCT-1990,2008,1007),
+    -> (3003,767.19,03-OCT-1990,2001,1001),
+    -> (3002,1900.10,03-OCT-1990,2007,1004),
+    -> (3005,5160.45,03-OCT-1990,2003,1002),
+    -> (3006,1098.16,03-OCT-1990,2008,1007),
+    -> (3006,1713.23,04-OCT-1990,2002,1003),
+    -> (3007,75.75,04-OCT-1990,2004,1002),
+    -> (3008,4723.00,05-OCT-1990,2006,1001),
+    -> (3010,1309.95,06-OCT-1990,2004,1002),
+    -> (3011,9891.88,06-OCT-1990,2006,1001);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(Onum,Amt,Odate,Cnum,Snum)values(3001,18.69,03-OCT-1990,2008,1007),
+(3003,7' at line 1
+W2_89800_Shubhankar>insert into order(Onum,Amt,Odate,Cnum,Snum)values(3001,18.69,'03-OCT-1990',2008,1007),
+    -> (3003,767.19,'03-OCT-1990',2001,1001),
+    -> (3002,1900.10,03-OCT-1990,2007,1004),
+    -> (3005,5160.45,03-OCT-1990,2003,1002),
+    -> (3006,1098.16,03-OCT-1990,2008,1007),
+    -> (3006,1713.23,04-OCT-1990,2002,1003),
+    -> (3007,75.75,04-OCT-1990,2004,1002),
+    -> (3008,4723.00,05-OCT-1990,2006,1001),
+    -> (3010,1309.95,06-OCT-1990,2004,1002),
+    -> (3011,9891.88,06-OCT-1990,2006,1001);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(Onum,Amt,Odate,Cnum,Snum)values(3001,18.69,'03-OCT-1990',2008,1007),
+(3003' at line 1
+W2_89800_Shubhankar>cl srl
+    -> cl srl;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cl srl
+cl srl' at line 1
+W2_89800_Shubhankar>INSERT into order(ONUM,AMT,ODATE,CUNM,SNUM) VALUES(3001,18.69,03-OCT-1990,2008,1007);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(ONUM,AMT,ODATE,CUNM,SNUM) VALUES(3001,18.69,03-OCT-1990,2008,1007)' at line 1
+W2_89800_Shubhankar>INSERT into order(ONUM,AMT,ODATE,CUNM,SNUM) VALUES(3001,18.69,'03-OCT-1990',2008,1007);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(ONUM,AMT,ODATE,CUNM,SNUM) VALUES(3001,18.69,'03-OCT-1990',2008,1007)' at line 1
+W2_89800_Shubhankar>DROP TABLE orders;
+Query OK, 0 rows affected (0.10 sec)
+
+W2_89800_Shubhankar>CREATE table orders(Onum int(4),Amt float(7,2),Odate varchar(12),Cnum int(4),Snum int(4));
+Query OK, 0 rows affected, 4 warnings (0.16 sec)
+
+W2_89800_Shubhankar>INSERT into order(ONUM,AMT,ODATE,CUNM,SNUM) VALUES(3001,18.69,'03-OCT-1990',2008,1007);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(ONUM,AMT,ODATE,CUNM,SNUM) VALUES(3001,18.69,'03-OCT-1990',2008,1007)' at line 1
+W2_89800_Shubhankar>INSERT INTO orders (ONUM, AMT, ODATE, CNUM, SNUM)
+    -> VALUES (3001, 18.69, '03-OCT-1990', 2008, 1007);
+Query OK, 1 row affected (0.09 sec)
+
+W2_89800_Shubhankar>INSERT INTO orders (ONUM, AMT, ODATE, CNUM, SNUM)
+    -> VALUES(3003,767.19,'03-OCT-1990',2001,1001),
+    -> (3002,1900.10,03-OCT-1990,2007,1004),
+    -> (3005,5160.45,03-OCT-1990,2003,1002),
+    -> (3006,1098.16,03-OCT-1990,2008,1007),
+    -> (3006,1713.23,04-OCT-1990,2002,1003),
+    -> (3007,75.75,04-OCT-1990,2004,1002),
+    -> (3008,4723.00,05-OCT-1990,2006,1001),
+    -> (3010,1309.95,06-OCT-1990,2004,1002),
+    -> (3011,9891.88,06-OCT-1990,2006,1001);
+ERROR 1054 (42S22): Unknown column 'OCT' in 'field list'
+W2_89800_Shubhankar>INSERT INTO orders (ONUM, AMT, ODATE, CNUM, SNUM)
+    -> VALUES(3003,767.19,'03-OCT-1990',2001,1001),
+    -> (3002,1900.10,'03-OCT-1990',2007,1004),
+    -> (3005,5160.45,'03-OCT-1990',2003,1002),
+    -> (3006,1098.16,'03-OCT-1990',2008,1007),
+    -> (3006,1713.23,'04-OCT-1990',2002,1003),
+    -> (3007,75.75,'04-OCT-1990',2004,1002),
+    -> (3008,4723.00,'05-OCT-1990',2006,1001),
+    -> (3010,1309.95,'06-OCT-1990',2004,1002),
+    -> (3011,9891.88,'06-OCT-1990',2006,1001);
+Query OK, 9 rows affected (0.01 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+W2_89800_Shubhankar>SELECT * FROM orders;
++------+---------+-------------+------+------+
+| Onum | Amt     | Odate       | Cnum | Snum |
++------+---------+-------------+------+------+
+| 3001 |   18.69 | 03-OCT-1990 | 2008 | 1007 |
+| 3003 |  767.19 | 03-OCT-1990 | 2001 | 1001 |
+| 3002 | 1900.10 | 03-OCT-1990 | 2007 | 1004 |
+| 3005 | 5160.45 | 03-OCT-1990 | 2003 | 1002 |
+| 3006 | 1098.16 | 03-OCT-1990 | 2008 | 1007 |
+| 3006 | 1713.23 | 04-OCT-1990 | 2002 | 1003 |
+| 3007 |   75.75 | 04-OCT-1990 | 2004 | 1002 |
+| 3008 | 4723.00 | 05-OCT-1990 | 2006 | 1001 |
+| 3010 | 1309.95 | 06-OCT-1990 | 2004 | 1002 |
+| 3011 | 9891.88 | 06-OCT-1990 | 2006 | 1001 |
++------+---------+-------------+------+------+
+10 rows in set (0.00 sec)
+
+W2_89800_Shubhankar>
