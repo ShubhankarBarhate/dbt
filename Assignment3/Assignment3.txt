@@ -1,0 +1,6 @@
+1) Does ANSI recognize the data type DATE?
+=>Yes, ANSI SQL recognizes the DATE data type. The DATE type stores date values in  year, month, and day (YYYY-MM-DD format).
+
+2) Which subdivision of SQL is used to insert values into tables?
+=>The Data Manipulation Language of SQL is used to insert values into tables. 
+The INSERT statement, which is part of DML, is specifically used to add new records to a table.
